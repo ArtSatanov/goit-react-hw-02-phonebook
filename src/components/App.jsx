@@ -29,13 +29,12 @@ export class App extends Component {
   };
 
   render() {
-    const visibleContact = this.state.contacts.filter(contact => {
-      if (this.state.filter === '') {
-        return this.state.contact
-          .toLowerCase()
-          .includes(this.state.filter.toLowerCase());
-      }
-    });
+    const visibleContact = this.state.contacts.filter(contact =>
+      this.state.filter === ''
+        ? contact
+        : contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
+    );
+
     return (
       <div>
         <h1>Phonebook</h1>

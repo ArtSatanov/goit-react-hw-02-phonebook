@@ -1,32 +1,27 @@
 import { Formik, Field, Form } from 'formik';
 
-expect const ContactForm = () => {
-   return (
-          <Formik
+export const ContactForm = () => {
+  return (
+    <Formik
       initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
+        name: '',
+        number: '',
       }}
-      onSubmit={(values) => {
-      }}
+      onSubmit={values => {}}
     >
       <Form>
-        <label htmlFor="firstName">First Name</label>
-        <Field id="firstName" name="firstName" placeholder="Jane" />
+        <label>
+          Name
+          <Field id="name" name="name" placeholder="Jane" />
+        </label>
 
-        <label htmlFor="lastName">Last Name</label>
-        <Field id="lastName" name="lastName" placeholder="Doe" />
+        <label>
+          Number
+          <Field id="lastName" name="number" placeholder="Doe" />
+        </label>
 
-        <label htmlFor="email">Email</label>
-        <Field
-          id="email"
-          name="email"
-          placeholder="jane@acme.com"
-          type="email"
-        />
         <button type="submit">Submit</button>
       </Form>
     </Formik>
-   )
-}
+  );
+};

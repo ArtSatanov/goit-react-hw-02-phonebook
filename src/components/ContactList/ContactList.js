@@ -1,5 +1,3 @@
-import { ContactListItem } from '../ContactListItem/ContactListItem';
-
 export const ContactList = ({ contacts, onDelete }) => {
   console.log(contacts);
   return (

@@ -1,26 +1,28 @@
+import { StyledTh, StyledTb, StyledTd } from './ContactList.styled';
+
 export const ContactList = ({ contacts, onDelete }) => {
   console.log(contacts);
   return (
-    <table>
+    <StyledTb>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Number</th>
-          <th>Delet</th>
+          <StyledTh>Name</StyledTh>
+          <StyledTh>Number</StyledTh>
+          <StyledTh>Action</StyledTh>
         </tr>
       </thead>
 
       <tbody>
         {contacts.map(contact => (
           <tr key={contact.id}>
-            <td>{contact.name}</td>
-            <td>{contact.number}</td>
-            <td>
+            <StyledTd>{contact.name}</StyledTd>
+            <StyledTd>{contact.number}</StyledTd>
+            <StyledTd>
               <button onClick={() => onDelete(contact.id)}>Delete</button>
-            </td>
+            </StyledTd>
           </tr>
         ))}
       </tbody>
-    </table>
+    </StyledTb>
   );
 };
